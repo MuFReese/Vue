@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue project</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="nullStyle.css">
+  <style>
+    [v-cloak]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app" v-cloak>
+
+    <div class="list" :time="intervalImage">
+      <div v-if="getInterval === 1">
+        <button class="btnImageRight" @click="[stopInterval, switchImageRight]"><div class="btnIconRight"></div></button>
+        <button class="btnImageLeft" @click="[stopInterval, switchImageLeft]"><div class="btnIconLeft"></div></button>
+        <div @click="changeImage" class="list-item"> <img class="imgSize" :src="imageItem"></div>
+        <div class="image-block-style"></div>
+        <div class="image-information">
+          <h2 class="image-information-name"> {{ getInterval }} </h2>
+          <div class="image-information-text">
+            Мы предлагаем продукты и решения, предназначенные для обеспечения промышленной безопасности на продуктопроводах предприятий нефте- и газодобывающего комплекса, других нефтехимических производств, а также подземных и надземных коммуникаций предприятий энергетики и связи.
+          </div>
+        </div>
+      </div>
+      <div v-else-if="getInterval === 2">
+        <button class="btnImageRight" @click="[stopInterval, switchImageRight]"><div class="btnIconRight"></div></button>
+        <button class="btnImageLeft" @click="[stopInterval, switchImageLeft]"><div class="btnIconLeft"></div></button>
+        <div @click="changeImage" class="list-item"> <img class="imgSize" :src="imageItem"></div>
+        <div class="image-block-style"></div>
+        <div class="image-information">
+          <h2 class="image-information-name"> {{ getInterval }} </h2>
+          <div class="image-information-text">
+            Используемые при производстве материалы и технологии отвечают самым высоким требованиям. Cами изделия прошли успешную апробацию в различных климатических зонах и с разной степенью интенсивности эксплуатации, показав себя только с лучшей стороны.
+          </div>
+        </div>
+      </div>
+      <div v-else>
+        <button class="btnImageRight" @click="[stopInterval, switchImageRight]"><div class="btnIconRight"></div></button>
+        <button class="btnImageLeft" @click="[stopInterval, switchImageLeft]"><div class="btnIconLeft"></div></button>
+        <div @click="changeImage" class="list-item"> <img class="imgSize" :src="imageItem"></div>
+        <div class="image-block-style"></div>
+        <div class="image-information">
+          <h2 class="image-information-name"> {{ getInterval }} </h2>
+          <div class="image-information-text">
+            Штат компании укомплектован специалистами высокой квалификации, прошедшими стажировку и обучение на лучших предприятиях отрасли, в том числе и зарубежных.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

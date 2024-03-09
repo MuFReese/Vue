@@ -1,0 +1,109 @@
+
+html{
+  font-family:'Courier New', Courier, monospace;
+}
+
+.imgSize{
+  margin: 50px 0px;
+  width: 100%;
+  height: 500px;
+}
+
+.btnImageRight{
+  position: absolute;
+  top: 40%;
+  right: 0;
+  background-color: darkred;
+  padding: 20px 30px 20px 20px;
+  z-index: 1;
+}
+
+.btnImageLeft{
+  position: absolute;
+  top: 40%;
+  left: 0;
+  background-color: darkred;
+  padding: 20px 20px 20px 30px;
+  z-index: 1;
+}
+
+.btnIconRight{
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(45deg);
+}
+
+.btnIconLeft{
+  width: 30px;
+  height: 30px;
+  border-top: 5px solid white;
+  border-right: 5px solid white;
+  transform: rotate(-135deg);
+}
+
+.btnIcon:hover{
+  transition-duration: 0.3s;
+  border-top: 5px solid black;
+  border-right: 5px solid black;
+}
+
+.image-block-style{
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-image: url(./img/fon.jpeg);
+  height: 500px;
+  width: 500px;
+  -webkit-clip-path: polygon();
+  clip-path: polygon(200px 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  animation: slideUpBlock 1.5s forwards;
+}
+
+.image-information{
+  color: white;
+  position: absolute;
+  height: 500px;
+  width: 300px;
+  top: 70px;
+  right: 100px;
+}
+
+.image-information-name{
+  font-size: 30px;
+  text-align: center;
+  margin: 20% 0px;
+  animation: slideUpName 1s forwards;
+}
+
+.image-information-text{
+  text-indent: 30px;
+  line-height: 20px;
+  animation: slideUpText 2s forwards;
+}
+
+@keyframes slideUpBlock {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpName {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slideUpText {
+  0% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
